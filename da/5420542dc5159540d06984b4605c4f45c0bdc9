@@ -1,0 +1,78 @@
+Cargo.toml
+  s_e83a5402cf255a::t_a5f1fc42a9d801 64
+  s_e83a5402cf255a::t_ab8fcef81dcd41 27
+crates/aionui-app/src/router/routes.rs
+  s_e83a5402cf255a::t_5952d9d09b8d90 406
+  s_e83a5402cf255a::t_b65fe9081a0e57 308-311
+crates/aionui-api-types/src/lib.rs
+  s_e83a5402cf255a::t_379bbb8451f1f0 131-135
+  s_e83a5402cf255a::t_4faa15203edd7c 22
+crates/aionui-fleet/src/routes.rs
+  s_e83a5402cf255a::t_294c74356458f3 94
+  s_e83a5402cf255a::t_bd414b4d5e899c 132,134-135
+  s_e83a5402cf255a::t_e2330277a45261 17-19
+  s_e83a5402cf255a::t_4f391f70829883 219
+  s_e83a5402cf255a::t_fe55c717c7b738 28,30-42
+  s_e83a5402cf255a::t_a6cf105d27d382 1-16,20-27,29,43-93,95-131,133,136-218,220-246,248-312,314-384,387-453
+  s_e83a5402cf255a::t_9445f6ac1dfb38 385-386
+crates/aionui-fleet/src/store.rs
+  s_e83a5402cf255a::t_89db2e44945758 526-527
+  s_e83a5402cf255a::t_baed5d9163ebc7 1-181,183-323,325-418,420-503,505-525,528-539
+crates/aionui-fleet/src/service.rs
+  s_e83a5402cf255a::t_7e93dec48c1a1c 298
+  s_e83a5402cf255a::t_96addf870a3451 12,14-33
+  s_e83a5402cf255a::t_2d417523d2f849 281-284,292-296
+  s_e83a5402cf255a::t_2c27931d05f04a 1-11,34-86,97-99,101-106,108,114-115,117-119,121-133,135-149,151-153,155-157,159-160,162-165,168-171,173-175,177-178,180-182,184-187,189-191,193-194,196-198,200-209,211-215,217-225,227-230,233-243,245-249,251-261,263-280,285-291,297,299-304,306-308,311-312,314-316,319-324,326-328,330-333,335-337,339-340,342-344,346-352,354-356,359-362,364-366,368-369,371-373,375-379,381-384,386,388-400
+  s_e83a5402cf255a::t_202234faf21b29 87-96,100,107,109-113
+crates/aionui-app/src/router/state.rs
+  s_e83a5402cf255a::t_f39766f0084998 318
+  s_e83a5402cf255a::t_8c4172442da0e6 139
+  s_e83a5402cf255a::t_c6fee841184d80 583-587
+  s_e83a5402cf255a::t_ae9fca472eea23 588
+crates/aionui-fleet/tests/fleet_service.rs
+  s_e83a5402cf255a::t_cd367d7dcdbee9 157-188
+  s_e83a5402cf255a::t_2b776a78c588af 9-10
+  s_e83a5402cf255a::t_71330bd0ca6113 1-5,7-8,11-24,26-156
+  s_e83a5402cf255a::t_dc4a601532ead9 6
+crates/aionui-api-types/src/fleet.rs
+  s_e83a5402cf255a::t_90199d1fa55ab0 152,169,175,187,198,207,214,224,233,253
+  s_e83a5402cf255a::t_1341292d01db10 68
+  s_e83a5402cf255a::t_e5f93891d605ff 11,34
+  s_e83a5402cf255a::t_a724d936d053bd 99,118,134
+  s_e83a5402cf255a::t_4403fcca6f557b 1-10,12-33,35-67,69-98,100-117,119-133,135-151,153-168,170-174,176-186,188-197,199-206,208-213,215-223,225-232,234-252,254-263,265-269,271-275,277-281,283-287,289-293,295-297
+  s_e83a5402cf255a::t_bf214a7008ff6a 264,270,276,282,288,294
+crates/aionui-fleet/src/lib.rs
+  s_e83a5402cf255a::t_f64572253ac9c8 1-9,11-12,14
+  s_e83a5402cf255a::t_d6efbf64a34c6c 10,15
+  s_e83a5402cf255a::t_ba18c7a038f6ad 13
+crates/aionui-app/src/services.rs
+  s_e83a5402cf255a::t_f0dd292837038c 460
+  s_e83a5402cf255a::t_269029df3772f1 289,300
+  s_e83a5402cf255a::t_4662a6c543c3c8 290,296-299
+  s_e83a5402cf255a::t_229d744a955ce9 291-292
+  s_e83a5402cf255a::t_fa064eda027ba6 56-58
+  s_e83a5402cf255a::t_13933d78f03702 293,295
+crates/aionui-fleet/src/team_notify.rs
+  s_e83a5402cf255a::t_45c2330d4d7857 9,16,22,24,33-34,36-39,42,44-59
+  s_e83a5402cf255a::t_c7daafd413b425 1-8,10-15,17-21,23,25-32,40-41,43,60-62
+crates/aionui-fleet/Cargo.toml
+  s_e83a5402cf255a::t_73e6abe5e51272 1-24
+crates/aionui-app/Cargo.toml
+  s_e83a5402cf255a::t_1b2cb0ccfc3818 43
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.43-trip",
+  "base_commit_sha": "da5420542dc5159540d06984b4605c4f45c0bdc9",
+  "prompts": {},
+  "sessions": {
+    "s_e83a5402cf255a": {
+      "agent_id": {
+        "tool": "chengxiaobang",
+        "id": "s_pm1eoc8ugaw1",
+        "model": "auto"
+      },
+      "human_author": "vega <jw_xiao@trip.com>"
+    }
+  }
+}
