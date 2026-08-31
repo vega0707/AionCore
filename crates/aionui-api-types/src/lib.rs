@@ -19,6 +19,7 @@ mod cron;
 mod custom_agent;
 mod extension;
 mod file;
+mod fleet;
 mod lifecycle;
 mod mcp;
 mod office;
@@ -124,6 +125,14 @@ pub use file::{
     ReadFileRequest, RevealItemRequest, SnapshotBaselineRequest, SnapshotCompareResponse, SnapshotDiscardRequest,
     SnapshotInfoResponse, SnapshotMode, SnapshotStageRequest, SnapshotWorkspaceRequest, StreamQuery,
     WorkspaceFlatFileResponse, WriteContentRequest, WriteFileRequest,
+};
+pub use fleet::{
+    FleetClaimRequest, FleetCliInfo, FleetCompleteRequest, FleetCreateDecisionRequest, FleetCreateProjectRequest,
+    FleetCreateTaskRequest, FleetDecisionKind, FleetDecisionsResponse, FleetExecutionLogDto, FleetFailRequest,
+    FleetHiveImportRequest, FleetHiveTaskImport, FleetInboxItemDto, FleetInboxResponse, FleetLogsResponse,
+    FleetPendingDecisionDto, FleetProjectDto, FleetProjectsResponse, FleetRegisterRuntimeRequest,
+    FleetResolveDecisionRequest, FleetRuntimeDto, FleetRuntimesResponse, FleetTaskDto, FleetTaskStatus,
+    FleetTasksResponse,
 };
 pub use lifecycle::{GitHubReleaseAsset, SystemInfoResponse, UpdateCheckRequest, UpdateCheckResult, UpdateReleaseInfo};
 pub use mcp::{

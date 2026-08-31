@@ -411,6 +411,7 @@ dependencies = [
  "aionui-db",
  "aionui-extension",
  "aionui-file",
+ "aionui-fleet",
  "aionui-mcp",
  "aionui-office",
  "aionui-process",
@@ -711,6 +712,28 @@ dependencies = [
  "tracing",
  "walkdir",
  "zip 2.4.2",
+]
+
+[[package]]
+name = "aionui-fleet"
+version = "0.2.0"
+dependencies = [
+ "aionui-api-types",
+ "aionui-auth",
+ "aionui-common",
+ "aionui-db",
+ "async-trait",
+ "axum",
+ "chrono",
+ "http-body-util",
+ "serde",
+ "serde_json",
+ "sqlx",
+ "tempfile",
+ "thiserror 2.0.18",
+ "tokio",
+ "tower",
+ "tracing",
 ]
 
 [[package]]

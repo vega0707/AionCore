@@ -53,6 +53,9 @@ pub struct AppServices {
     /// Project-bind service (project-bind side branch). Shared by conversation
     /// and team wiring to bind/backfill project/folder rows. Cheap to clone.
     pub project_service: ProjectService,
+    /// Munder Fleet control plane (Strategy A). Owns runtime/claim/decision/
+    /// inbox orchestration over the `fleet_*` tables.
+    pub fleet_service: aionui_fleet::FleetService,
     /// Sidebar ordering store (`user_order` table). Shared by the conversation
     /// delete hook (path-1 cascade), the team service (path-2 cascade), and the
     /// sidebar read state. Cheap to clone (Arc). See sidebar design §4.
@@ -283,6 +286,18 @@ impl AppServices {
         let project_store: Arc<dyn IProjectStore> = Arc::new(SqliteProjectStore::new(database.pool().clone()));
         let project_service = ProjectService::new(project_store, work_dir.join("conversations"));
 
+        // Munder Fleet control plane (Strategy A). Service owns the fleet
+        // store; schema is ensured eagerly here (044 migration tables + the
+        // fleet_projects/fleet_tasks/fleet_inbox extension tables). Team
+        // mailbox bridge mirrors completion/idle to the team lead.
+        let fleet_service = aionui_fleet::FleetService::new(database.pool().clone()).with_team_notify(Arc::new(
+            aionui_fleet::FleetTeamMailboxNotify::new(database.pool().clone()),
+        ));
+        fleet_service
+            .init()
+            .await
+            .map_err(|e| anyhow::anyhow!("failed to init fleet schema: {e}"))?;
+
         // Sidebar ordering store (`user_order` table). Built early so it can be
         // shared by the conversation delete hook, the team service, and the
         // sidebar read state.
@@ -442,6 +457,7 @@ impl AppServices {
             session_message_queue,
             session_message_notify,
             project_service,
+            fleet_service,
             user_order_store,
             task_manager_delete_hook: Some(task_manager_delete_hook),
             agent_registry,

@@ -136,6 +136,7 @@ pub struct ModuleStates {
     pub connection_test: ConnectionTestRouterState,
     pub file: FileRouterState,
     pub project: ProjectRouterState,
+    pub fleet: aionui_fleet::FleetRouterState,
     pub sidebar: SidebarRouterState,
     pub mcp: McpRouterState,
     pub extension: ExtensionRouterState,
@@ -314,6 +315,7 @@ pub async fn build_module_states(
         connection_test: build_module_state_phase(&boot, "connection_test", build_connection_test_state),
         file: build_module_state_phase(&boot, "file", || build_file_state(services))?,
         project: build_module_state_phase(&boot, "project", || build_project_state(services)),
+        fleet: build_module_state_phase(&boot, "fleet", || build_fleet_state(services)),
         sidebar: build_module_state_phase(&boot, "sidebar", || build_sidebar_state(services)),
         mcp: build_module_state_phase(&boot, "mcp", || build_mcp_state(services)),
         extension: ext_state,
@@ -578,6 +580,12 @@ pub fn build_project_state(services: &AppServices) -> ProjectRouterState {
     }
 }
 
+/// Build the Munder Fleet control-plane router state from application services.
+pub fn build_fleet_state(services: &AppServices) -> aionui_fleet::FleetRouterState {
+    aionui_fleet::FleetRouterState {
+        fleet: std::sync::Arc::new(services.fleet_service.clone()),
+    }
+}
 /// Build the sidebar read/ordering router state from application services.
 /// The sidebar store and ordering store share the app-wide pool; `work_dir` is
 /// the conversation temp-workspace root used for path classification (must match
